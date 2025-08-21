@@ -6,7 +6,783 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
   <title>Responsive Website</title>
+<style>
+  * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+/* Navbar Styling */
+.navbar {
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  background-color:#0a0f1e;
+  padding: 30px 20px;
+  box-shadow: 0.4px 8px rgba(0, 0, 0, 0.2);
+
+}
+
+   .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #4dafff;
+
+
+}
+
+/* Toggle button */
+.toggle-btn {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  color:#ccc;
+}
+
+/* Navigation Links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #ccc;
+  font-size: 16px;
+  padding: 10px;
+  text-transform: uppercase;
+
+}
+
+.nav-links li a:hover {
+  background-color:#4dafff;;
+  color:black;
+  border-radius: 4px;
+}
+
+/* Dropdown (hidden by default) */
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  background:#0a0f1e;
+  padding: 10px 0;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  z-index: 999;
+}
+
+
+/* Show dropdown on click */
+.dropdown.show {
+  display: block;
+}
+
+.dropdown ul {
+  list-style: none;
+}
+
+.dropdown ul li a {
+  display: block;
+  padding: 10px 25px;
+  text-transform: capitalize;
+}
+.nav-links.active {
+  display: flex ;
+  flex-direction: column;
+  background:#0a0f1e; /* Dark background for visibility */
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  z-index: 1100;
+  padding: 10px 0;
+}
+.nav-links.active li a {
+  color: #fff; /* White text */
+  padding: 12px 20px;
+  display: block;
+}
+
+.cart-count {
+  background-color: red;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 50%;
+  position: absolute;
+  top: -8px;
+  right: -8px;
+}
+.cart-icon {
+  position: relative;
+  color: #ccc;
+  font-size: 20px;
+  margin-left: 15px;
+}
+
+
+
+/* Responsive Media Query */
+@media (max-width: 768px) {
+  .toggle-btn {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0; /* agar right side chahiye to right: 0; */
+    width: auto; /* sidebar ki width */
+    height: auto; /* full screen height */
+    background: #0a0f1e; /* dark bg for sidebar */
+    padding-top: 60px; /* space for logo/toggle */
+    z-index: 1100;
+  }
+
+  .nav-links.active {
+    display: inline-flex; /* sirf text jitna space le */
+    flex-direction: column;
+    background: #0a0f1e;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: auto; /* full width nahi, auto width */
+    padding: 10px 0;
+    z-index: 1100;
+  }
+  .nav-links.active li a {
+    color: #fff;
+    padding: 8px 15px; /* upar neeche kam padding */
+    display: block;
+    text-align:centre;
+  }
+
+
+
+
+  .nav-links li a {
+    color: #fff;
+    padding: 12px 20px;
+    display: block;
+    text-align:left; /* text left align */
+  }
+
+
+.nav-links li {
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .nav-links li:hover .dropdown {
+    position: static;
+    box-shadow: none;
+  }
+  .dropdown {
+    position: static;
+    display: none;
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+  }
+
+  .dropdown.show {
+    display: block;
+    padding-left: 20px; /* indent sub menu items */
+  }
+
+    .dropdown ul li a {
+    color: #fff; /* White text for dropdown links */
+    padding: 8px 20px;
+  }
+
+  .cart-icon {
+    position: absolute;
+    right: 60px; /* toggle button se thoda left */
+    top: 20px;
+  }
+
+}
+
+
+
+
+
+
+/*banner css*/
+
+.banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px;
+  background: linear-gradient(to right, #f4f4f4, #e6f7ff);
+}
+
+.banner-text {
+  flex: 1;
+  padding-right: 20px;
+}
+.banner-text h1 {
+  font-size: 40px;
+  color: #333;
+  margin-right: 50px;
+}
+
+.banner-text p {
+  font-size: 18px;
+  margin: 15px 0;
+  color: #555;
+}
+
+.banner-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: green;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: 0.3s ease;
+}
+
+.banner-btn:hover {
+  background-color: darkgreen;
+}
+
+.banner-image {
+  flex: 1;
+  text-align: center;
+}
+.banner-image img {
+  width: 500px;
+  height: auto;
+}
+@media (max-width: 768px) {
+  .banner {
+    flex-direction: column;       /* column layout on small screen */
+    text-align: center;           /* center text */
+    padding: 40px 20px;
+    font-size: 1.8em;           /* smaller padding */
+  }
+
+  .banner-text {
+    padding: 0;                   /* remove side spacing */
+  }
+
+  .banner-image {
+    margin-top: 30px;             /* space below text */
+  }
+}
+
+/* HERO SECTION */
+   .hero-banner {
+  position: relative;
+  background: url('image/banner2.jpg') no-repeat center center/cover;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+}
+
+.hero-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* dark overlay */
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+  padding: 20px;
+}
+
+.hero-content .title {
+  font-size: 1rem;
+  font-weight: 100;
+  margin-bottom: 10px;
+  animation: fadeInDown 1s ease;
+  color: white;
+
+}
+
+.hero-content .description {
+  font-size: 3rem;
+  font-weight: 400;
+  margin-bottom: 20px;
+  animation: fadeInUp 1.2s ease;
+  color: white;
+  text-transform: uppercase;
+}
+.price{
+  margin-bottom:20px;
+  font-size: 18px;
+  color:white;
+   animation: fadeInUp 1.2s ease;
+}
+
+.hero-content .btnn {
+  background-color: #00ffcc;
+  color: black;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  text-decoration: none;
+   transition: 0.3s;
+}
+
+.hero-content .btnn:hover {
+  background-color: white;
+  color: black;
+}
+
+/* Animation */
+@keyframes fadeInDown {
+  0% { opacity: 0; transform: translateY(-40px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(40px);} 
+  100%{ opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width:768px) {
+  .hero-content h1 {
+    font-size: 36px;
+  }
+
+  .hero-content h3 {
+    font-size: 20px;
+  }
+}
+/*shop by categories*/
+
+.h1{
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 60px;
+  margin-bottom: 30px;
+  color:black;
+ 
+}
+
+.container{
+  display: flex;
+  flex-wrap:wrap;
+  justify-content:center ;
+  gap:20px;
+  padding:20px 20px ;
+  text-align: center;
+  
+}
+.card{
+  flex: 0 0 350px;
+  cursor: pointer;
+  max-width: 300px;
+}
+.card:hover{
+  transform: translateY(-10px);
+}
+
+.title{
+  font-size: 20px;
+  text-transform: uppercase;
+
+}
+p{
+  margin-bottom: 10px;
+  font-size: 15px;
+  color: black;
+  
+}
+  
+  .card img {
+  width:100%;
+  height:400px;
+  object-fit: cover;
+
+}
+.btnn{
+  display: inline-block;
+  color: black;
+  border: 2px solid gray;
+  padding: 8px 10px;
+  text-decoration: none;
+  font-size: 1em;
+  text-transform: uppercase;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.4);
+  margin-top:15px;
+  border-radius: 3px;
+}
+
+.btnn:hover {
+  background: darkslategrey;
+  color: white;
+}
+
+/* Responsive for Cards */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .card {
+    flex: 0 0 100%;
+    max-width: 90%;
+  }
+
+  .card img {
+    height: auto;
+  }
+}
+
+/*latest products*/
+.product-container{
+  display: flex;
+  justify-content: center;
+  gap:20px;
+  align-items: center;
+  flex-wrap:wrap ;
+  padding: 20px;
+}
+.product{
+  flex: 0 0 250px;
+  cursor: pointer;
+  width: 100%
+}
+.product:hover{
+  transform: translateY(-10px);
+}
+.product img{
+  width: 100%;
+  object-fit: cover;
+  height: 300px;
+
+}
+.rating .fa {
+  color: #ff523b; /* orange stars */
+  margin: 0 1px;
+}
+
+
+h3{
+  font-size: 16px;
+  margin-top: 10px;
+  color:black ;
+}
+.product {
+  position: relative; /* important for absolute positioning inside */
+}
+
+.product .lock-icon {
+  position: absolute;
+  bottom: 10px;   /* 10px from bottom */
+  right: 10px;    /* 10px from right */
+  font-size: 26px;
+  color: #fff;
+  background-color: #e35f26;
+  padding: 8px 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  cursor: default;
+  transition: background-color 0.3s ease;
+}
+
+.product .lock-icon:hover {
+  background-color: #d14a18;
+}
+
+.zoom-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  transition: transform 0.4s ease;
+  cursor: pointer;
+}
+
+.zoom-image:active {
+  transform: scale(1.3) rotate(2deg);
+}
+
+.zoom-image:hover {
+  transform: scale(1.05);
+}
+/*commumity*/
+
+/* Community Section */
+.community {
+  background: #0a0f1e;
+  color: white;
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.community-content h2 {
+  font-size: 28px;
+  color: #4dafff;
+  margin-bottom: 10px;
+}
+
+.community-content p {
+  max-width: 500px;
+  margin: 0 auto 20px;
+  font-size: 16px;
+  color: #ccc;
+}
+
+.community-form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  max-width: 500px;
+  margin: auto;
+}
+
+.community-form input {
+  flex: 1 1 250px;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  outline: none;
+}
+
+.community-form button {
+  background: #4dafff;
+  border: none;
+  padding: 12px 20px;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s;
+}
+
+.community-form button:hover {
+  background: #3498db;
+}
+
+@media (max-width: 768px) {
+  .community-content h2 {
+    font-size: 22px;
+  }
+  .community-form {
+    flex-direction: column;
+  }
+  .community-form input {
+    flex: unset;        /* fixed 250px ka rule hata do */
+    width: 90%;         /* screen ke 90% tak */
+    max-width: 300px;   /* limit set kar do */
+    font-size: 14px;    /* chhota text */
+    padding: 6px 10px;  /* height kam */
+  }
+  .community-form button {
+    width: 90%;         /* button bhi input ke barabar */
+    max-width: 300px;
+    font-size: 14px;
+    padding: 6px 10px;
+  }
+}
+
+
+
+/*testimonial*/
+.testimonial{
+  padding-top: 100px;
+}
+
+.small-container{
+  max-width: 1080;
+  margin: auto;
+  padding: 25px;
+  padding-right: 25px;
+  
+}
+.testimonial .row {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
+
+.testimonial .col-3{
+  flex: 0 0 25%;
+  text-align: center;
+  cursor: pointer;
+  padding: 40px 10px;
+  box-shadow: 0 0 10px 0px;
+  max-width: 250;
+  
+}
+.testimonial .col-3 img{
+  width: 50px;
+  margin-top: 20px;
+  border-radius: 50%;
+}
+.testimonial .col-3:hover{
+  transform: translateY(-10px);
+
+}
+.fa .fa-quote-left{
+  font-size: 34px;
+  color: #f5f5f5;
+}
+.col-3 p{
+    font-size: 12px;
+    margin: 12px 0;
+    color: #777;
+}
+.testimonial .col-3 h3{
+  font-weight: 600;
+  font-size: 16px;
+  color: #555;
+}
+.rating .fa{
+  color:#ff523b;
+}
+@media (max-width: 768px) {
+  .testimonial .row {
+    flex-wrap: wrap; /* mobile me wrap ho jaye */
+  }
+
+  .testimonial .col-3 {
+    flex: 1 1 100%; /* poora width le */
+    max-width: 90%; /* thoda margin */
+  }
+}
+
+
+/*footer*/
+
+footer {
+      background-color: #141a2f;
+      padding: 40px 20px;
+      color: #ddd;
+      margin-top: 60px;
+      width: 100%;
+    }
+    .footer-columns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: space-between;
+      margin-bottom: 30px;
+    }
+    .footer-col {
+      flex: 1 1 250px;
+    }
+        .footer-col h3 {
+      color:#4dafff;
+      margin-bottom: 15px;
+    }
+.footer-col ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-col ul li {
+      margin-bottom: 10px
+    }
+        .footer-col ul li a {
+      color: #ccc;
+      text-decoration: none;
+    }
+
+    .footer-col ul li a:hover {
+      color: #4dafff
+    }
+    .footer-col h3{
+      font-size: 18px;
+    } 
+    .footer-col p{
+      margin-bottom: 20px;
+      color: #ccc;
+    }
+
+    
+    .social-links a {
+      color: white;
+      font-size: 1.5rem;
+       margin-right: 15px;
+    }
+    .social-links a:hover {
+      color: #4dafff
+    }
+.footer-bottom {
+      text-align: center;
+      font-size: 0.9rem;
+      border-top: 1px solid #444;
+      padding-top:20px;
+    }
+    .footer-bottom p{
+      color: #ccc;
+    }
+    .footer-bottom i {
+      font-size: 1.5rem;
+      margin: 0 8px;
+    }
+
+
+    @media (max-width: 768px) {
+  footer {
+    margin-top: 30px; /* upar ka gap kam */
+    padding: 20px 10px; /* chhoti screen pe padding kam */
+  }
+
+  .footer-columns {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px; /* beech ka gap aur kam */
+    margin-bottom: 10px; /* neeche ka gap kam */
+  }
+
+  .footer-col {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 5px; /* har column ke neeche ka gap kam */
+    padding-bottom: 0; /* extra space remove */
+  }
+
+  .footer-bottom {
+    padding-top: 10px; /* neeche ka padding kam */
+  }
+
+.social-links a {
+    margin: 0 8px;
+  }
+}
+</style>
 </head>
 <body>
 
@@ -406,7 +1182,7 @@
     </div>
   </footer>
 
-<h1>sumaira raza</h1>
+
 
   
 
