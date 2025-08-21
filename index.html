@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+  <title>Responsive Website</title>
+
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">swiftGear</div>
+    
+
+    <div class="toggle-btn" onclick="toggleMenu()">
+      <i class="fas fa-bars"></i>
+    </div>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="">Home</a></li>
+       
+      <li class="dropdown-parent">
+        <a href="#" onclick="toggleDropdown(event)">accessories <i class="fas fa-caret-down"></i></a>
+        <div class="dropdown">
+          <ul>
+            <li><a href="">Yog Mat</a></li>
+            <li><a href="">Foam Roller</a></li>
+            <li><a href="">Resistance Band</a></li>
+            <li><a href="">Shaker Bottle</a></li>
+          </ul>
+         </div>
+      </li>
+
+      
+      <li class="dropdown-parent">
+        <a href="#" onclick="toggleDropdown(event)">Women <i class="fas fa-caret-down"></i></a>
+        <div class="dropdown">
+          <ul>
+            <li><a href="">Women Tess</a></li>
+            <li><a href="">Women trouser</a></li>
+            <li><a href="">Womens Tank Tops</a></li>
+          </ul>
+        </div>
+      </li>
+
+      
+      <li class="dropdown-parent">
+        <a href="#" onclick="toggleDropdown(event)">Men <i class="fas fa-caret-down"></i></a>
+        <div class="dropdown">
+          <ul>
+            <li><a href="">T-shirts</a></li>
+            <li><a href="">Shorts</a></li>
+            <li><a href="">Trousers</a></li>
+            <li><a href="">TankTops/Sandos</a></li>
+            <li><a href="boyjacket.html">Gym Hodies</a></li>
+            <li><a href="">Track suit</a></li>
+          </ul>
+        </div> 
+      </li>
+
+      <li><a href="besrseller.html">Best Seller</a></li>
+      <li><a href="contacts.html">Contact</a></li>
+  </ul>
+    <div class="cart-icon">
+    <i class="fa-solid fa-lock"></i>
+    <span class="cart-count">0</span>
+  </div>
+  </nav>
+<section class="hero-banner">
+  <div class="hero-content">
+    <h1 class="title">Excel with swift Gear </h1>
+    <h3 class="description"> SWIfT GEAR</h3>
+    <p class="price">You source for high performance peripherals and equipment</p>
+    <a href="#" class="btnn">Explore </a> 
+  </div>
+</section>
+
+<h1 class="h1">Shop By Categories</h1>
+
+  <!-- Catgories -->
+  <div class="container">
+    <div class="card">
+      <div class="card-img" class="zoom-image">
+        <img src="image/eq8.jpg">
+    <a href="" class="btnn">Eqipment</a>
+  </div>
+</div>
+
+<div class="card">
+      <div class="card-img">
+        <img src="image/nutration9.jpg" class="zoom-image">
+    <a href="" class="btnn">Nutrations</a>
+ </div>
+</div>
+
+<div class="card">
+      <div class="card-img">
+        <img src="image/bags6.jpg" class="zoom-image">
+    <a href="" class="btnn">Gym Bags</a>
+  </div>
+</div>
+
+<div class="card">
+      <div class="card-img">
+        <img src="image/shoess.jpg" class="zoom-image">
+    <a href="" class="btnn">Shoes</a>
+  </div>
+</div>
+</div>
+
+<section class="banner">
+  <div class="banner-text">
+    <h1>Strong Body,Calm Mind</h1>
+    <p>Shop our exclusive yoga mats and accessories.</p>
+    <a href="#" class="banner-btn">Shop Now</a>
+  </div>
+  <div class="banner-image">
+    <img src="image/yoga1.jpg" alt="Gym Accessories">
+  </div>
+  </section>
+
+  
+<!-- latest products -->
+<h1 class="h1">Latest Product</h1>
+
+
+  <div class="product-container">
+    <div class="product">
+      <img src="image/tees7.jpg" class="zoom-image">
+      <h3>comfortable Tees</h3>
+      <div class="rating">
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star-half-alt"></i>
+  </div>
+      <p>PKR.4,000</p>
+      <i class="fa-solid fa-lock lock-icon" title="secure product"></i>
+    </div>
+
+  <div class="product">
+      <img src="image/gtrack1.jpg" class="zoom-image">
+      <h3>Women Track Suit</h3>
+      <div class="rating">
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star-half-alt"></i>
+  </div>
+      <p>PKR.6,000</p>
+      <i class="fa-solid fa-lock lock-icon" title="secure product"></i>
+    </div>
+
+    <div class="product">
+      <img src="image/gtrouser2.jpg" class="zoom-image">
+      <h3>women Gym Trouser</h3>
+      <div class="rating">
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star-half-alt"></i>
+  </div>
+      <p>PKR.5,000</p>
+      <i class="fa-solid fa-lock lock-icon" title="secure product"></i>
+    </div>
+
+  
+  
+<div class="product">
+      <img src="image/tanktop.jpg" class="zoom-image">
+      <h3>Women Tank Top</h3>
+      <div class="rating">
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star-half-alt"></i>
+  </div>
+      <p>PKR.4,000</p>
+      <i class="fa-solid fa-lock lock-icon" title="secure product"></i>
+    </div>
+
+    <div class="product">
+      <img src="image/resistanceband.jpg" class="zoom-image">
+      <h3>Resistance Band</h3>
+      <div class="rating">
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star-half-alt"></i>
+  </div>
+      <p>PKR.2,000</p>
+      <i class="fa-solid fa-lock lock-icon" title="secure product"></i>
+    </div>
+
+    <div class="product">
+      <img src="image/hodiess.jpg" class="zoom-image">
+      <h3>Men's Hoodies</h3>
+      <div class="rating">
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star-half-alt"></i>
+  </div>
+      <p>PKR.7,999</p>
+      <i class="fa-solid fa-lock lock-icon" title="secure product"></i>
+    </div>
+
+    <div class="product">
+      <img src="image/trousers1.jpg" class="zoom-image">
+      <h3>Men Trouser</h3>
+      <div class="rating">
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star-half-alt"></i>
+  </div>
+      <p>PKR.5,000</p>
+      <i class="fa-solid fa-lock lock-icon" title="secure product"></i>
+    </div>
+
+    <div class="product">
+      <img src="image/mentrack.jpg" class="zoom-image">
+      <h3>Men's Track Suit</h3>
+      <div class="rating">
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star-half-alt"></i>
+  </div>
+      <p>PKR.8,000</p>
+      <i class="fa-solid fa-lock lock-icon" title="secure product"></i>
+    </div>
+
+  <div class="product">
+      <img src="image/dumbbler.jpg" class="zoom-image">
+      <h3>Dumbbler</h3>
+      <div class="rating">
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star-half-alt"></i>
+  </div>
+      <p>PKR.8,000</p>
+      <i class="fa-solid fa-lock lock-icon" title="secure product"></i>
+    </div>
+
+      <div class="product">
+      <img src="image/bench press machine.jpg" class="zoom-image">
+      <h3>Bench Press Machine</h3>
+      <div class="rating">
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star-half-alt"></i>
+  </div>
+      <p>PKR.85,000</p>
+      <i class="fa-solid fa-lock lock-icon" title="secure product"></i>
+    </div>
+
+      <div class="product">
+      <img src="image/roller1.jpg" class="zoom-image">
+      <h3>Foam Roller</h3>
+      <div class="rating">
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star-half-alt"></i>
+  </div>
+      <p>PKR.6,999</p>
+      <i class="fa-solid fa-lock lock-icon" title="secure product"></i>
+    </div>
+
+      <div class="product">
+      <img src="image/gym ball.jpg" class="zoom-image">
+      <h3>Exercise Ball</h3>
+      <div class="rating">
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star-half-alt"></i>
+  </div>
+      <p>PKR.3,000</p>
+      <i class="fa-solid fa-lock lock-icon" title="secure product"></i>
+    </div>
+  </div>
+
+
+
+  
+  <section class="community">
+  <div class="community-content">
+    <h2>Join Our Community</h2>
+    <p>Stay updated with our latest products, offers, and events. Subscribe now and be part of our family!</p>
+    <form class="community-form">
+      <input type="email" placeholder="Enter your email" required>
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>
+</section>
+
+ 
+
+      
+        <div class="testimonial">
+          <div class="small-container">
+            <div class="row">
+              <div class="col-3">
+                <i class="fa fa-quote-left"></i>
+              <p>SwiftGear_s gym wear is amazing! The fabric is soft, breathable, and fits perfectly.<br> I feel comfortable and confident during every workout.</p>
+                <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-0"></i>
+              </div>
+              <img src="image/women4.jpg">
+              <h3>sean porker</h3>
+            </div>
+          <div class="col-3">
+                <i class="fa fa-quote-left"></i>
+              <p>“I ordered a resistance band and it arrived right on time. The quality is premium and <br>it’s been a great addition to my home workout</p>
+                <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-alt"></i>
+              </div>
+              <img src="image/men5.jpg">
+              <h3>jon Josen</h3>
+            </div>
+          <div class="col-3">
+                <i class="fa fa-quote-left"></i>
+              <p>Their customer service is outstanding! The size exchange process was quick<br> and hassle-free. I’ll definitely shop here again.</p>
+                <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-alt"></i>
+              </div>
+              <img src="image/women3.jpg">
+              <h3>Hemeliya</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+        <!-- footer -->
+
+          <footer>
+    <div class="footer-columns">
+      <div class="footer-col">
+        <h3>SwiftGear</h3>
+        <p>High-quality gym wear, equipment, and sports nutrition. Powering your performance, one goal at a time.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-tiktok"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3>Customer Service</h3>
+        <ul>
+          <li><a href="Faq.html">FAQ</a></li>
+          <li><a href="shipping.html">Shipping & Returns_tracking</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+              </div>
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="sitmap.html">Sitemap</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+        </ul>
+        </div>
+      </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 SwiftGear. All rights reserved.</p>
+      <div>
+        <i class="fab fa-cc-visa"></i>
+        <i class="fab fa-cc-mastercard"></i>
+        <i class="fab fa-cc-paypal"></i>
+      </div>
+    </div>
+  </footer>
+
+<h1>sumaira raza</h1>
+
+  
+
+  
+    
+  
+
+
+
+
+
+  <script>
+    // Toggle menu for mobile
+    function toggleMenu() {
+      const nav = document.getElementById("navLinks");
+      nav.classList.toggle("active");
+    }
+
+    // Toggle dropdown on click
+    function toggleDropdown(event) {
+      event.preventDefault();
+
+      const parentLi = event.target.closest('.dropdown-parent');
+      const dropdown = parentLi.querySelector('.dropdown');
+
+      document.querySelectorAll('.dropdown').forEach(dd => {
+        if (dd !== dropdown) dd.classList.remove('show');
+      });
+
+      dropdown.classList.toggle('show');
+    }
+    function toggleMenu() {
+  const nav = document.getElementById("navLinks");
+  nav.classList.toggle("active");
+}
+
+
+    // Click outside closes dropdown
+    document.addEventListener('click', function(event) {
+      const isClickInside = event.target.closest('.dropdown-parent');
+      if (!isClickInside) {
+        document.querySelectorAll('.dropdown').forEach(dd => dd.classList.remove('show'));
+      }
+    });
+  </script>
+
+</body>
+</html>
